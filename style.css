@@ -1,0 +1,338 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+    line-height: 1;
+}
+ol,
+ul {
+    list-style: none;
+}
+blockquote,
+q {
+    quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+/*=========*/
+
+#main {
+  width: 4320px;
+}
+
+#page1 {
+  width: 506px;
+  height: 720px;
+  background: url('images/flyer1.png');
+  -webkit-background-size: 506px;
+       -o-background-size: 506px;
+          background-size: 506px;  
+  float: left;
+}
+
+#page2 {
+  width: 686px;
+  height: 720px;
+  background: url('images/flyer2.png');
+  -webkit-background-size: 686px;
+       -o-background-size: 686px;
+          background-size: 686px;
+  float: left;
+}
+
+#page3 {
+  width: 342px;
+  height: 720px;
+  background: url('images/flyer3.png');
+  -webkit-background-size: 342px;
+       -o-background-size: 342px;
+          background-size: 342px;
+  float: left;
+}
+
+#page4 {
+  width: 686px;
+  height: 720px;
+  background: url('images/flyer4.png');
+  -webkit-background-size: 686px;
+       -o-background-size: 686px;
+          background-size: 686px;
+  float: left;
+}
+
+#page5 {
+  width: 700px;
+  height: 720px;
+  background: url('images/flyer5.png');
+  -webkit-background-size: 700px;
+       -o-background-size: 700px;
+          background-size: 700px;
+  float: left;
+}
+
+#page6 {
+  width: 680px;
+  height: 720px;
+  background: url('images/flyer6.png');
+  -webkit-background-size: 680px;
+       -o-background-size: 680px;
+          background-size: 680px;
+  float: left;
+}
+
+#page7 {
+  width: 691px;
+  height: 720px;
+  background: url('images/flyer7.png');
+  -webkit-background-size: 691px;
+       -o-background-size: 691px;
+          background-size: 691px;
+  float: left;
+}
+
+
+/*==== SCOTT ====*/
+
+#scott {
+  position: absolute;
+  width: 166px;
+  height: 177px;
+  top: 548px;
+  left: 654px;
+}
+
+#item-scott {
+  position: absolute;
+  width: 300px;
+  top: -20px;
+  left: -70px;
+  z-index: 99;
+}
+
+
+/*==== RECIPE ====*/
+
+#recipe-bg {
+  position: relative;
+  width: 670px;
+  height: 400px;
+  background: url("images/recipe-bg.png") no-repeat;
+  -webkit-background-size: 670px;
+       -o-background-size: 670px;
+          background-size: 670px;
+  margin-top: 12px;
+  margin-left: 14px;
+}
+
+#recipe1 {
+  width: 225px;
+  height: 211px;
+  top: 188px;
+  left: 220px;
+  /*z-index: 5;*/
+  box-shadow: 0px -2px 13px rgba(0,0,0,0.6);
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  cursor:pointer;
+  /*position: relative;*/
+}
+
+/*
+#recipe-bg:hover #recipe1 {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+*/
+
+#recipe2 {
+  width: 225px;
+  height: 211px;
+  top: 188px;
+  left: 170px;
+  /*position: absolute;
+  z-index: 1;*/
+  background: #ffffff;
+  /*visibility: hidden;*/
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 0px -2px 13px rgba(0,0,0,0.6);
+  cursor:pointer;
+}
+
+#recipe3 {
+  width: 225px;
+  height: 211px;
+  top: 188px;
+  left: 270px;
+  /*position: absolute;
+  z-index: 1; */
+  background: #ffffff;
+  /*visibility: hidden;*/
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 0px -2px 13px rgba(0,0,0,0.6);
+  cursor:pointer;
+}
+
+.rep1newpos {
+  -webkit-transform: scale(1) !important;
+  -ms-transform: scale(1) !important;
+  transform: scale(1) !important;
+  top: 188px !important;
+  left: 270px !important;
+  position: absolute !important;
+  z-index: 1 !important;
+}
+
+.rep2newpos {
+  -webkit-transform: scale(1.1) !important;
+  -ms-transform: scale(1.1) !important;
+  transform: scale(1.1) !important;
+  top: 188px !important;
+  left: 220px !important;
+  position: absolute !important;
+  z-index: 5 !important;
+}
+
+.rep3newpos {
+  top: 188px !important;
+  left: 170px !important;
+  position: absolute !important;
+  z-index: 1 !important;
+}
+
+
+#itempop {
+  width: 600px;
+  height: 343px;
+  background: #000000;
+  z-index: 6;
+  position: fixed;
+  background: url("images/itempop-bg.png") no-repeat;
+  -webkit-background-size: 600px;
+       -o-background-size: 600px;
+          background-size: 600px;
+  box-shadow: 0px 5px 13px rgba(0,0,0,0.8);
+  top: 250px;
+  left: 32%;
+  overflow: hidden;
+  display: none;
+  cursor: pointer;
+}
+
+.itempop-img {
+  width: 43%;
+  float: left;
+}
+
+.itemname {
+  position: relative;
+  width: 32%;
+  top: 30px;
+  left: 20px;
+}
+
+.itemcta {
+  position: relative;
+  top: 50px;
+  left: 0px;
+  width: 37%;
+}
+
+.itemdeets {
+  position: relative;
+  top: 60px;
+  left: 0px;
+  width: 55%;
+}
+
+#itempopclickbox {
+  width: 310px;
+  height: 260px;
+  position: relative;
+  top: 226px;
+  left: 16px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+
+#kale {
+/*  width: 309px;
+  height: 242px;
+  top: 559px;
+  left: 867px; */
+  z-index: 1;
+  position: absolute;
+  cursor: pointer;
+  /*display: none;*/
+}
+
+#pork {
+/*  width: 309px;
+  height: 289px;
+  top: 512px;
+  left: 858px; */
+  z-index: 1;
+  position: absolute;
+  cursor: pointer;
+}
+
+
+#nav {
+  position: fixed;
+  width: 100%;
+  height: 87px;
+  text-align: center;
+  background: #2FAE8C;
+}
+
+#topnav {
+  width: 1050px;
+}
+

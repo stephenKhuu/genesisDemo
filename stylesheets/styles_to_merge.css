@@ -1,0 +1,483 @@
+/********************
+ * Top Nav
+ ********************/
+#nav {
+  z-index: 200;
+  top: 0px;
+}
+
+#nav:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.filter-toggle {
+  float: right;
+  cursor: pointer;
+  background-color: white;
+  color: #404243;
+  margin: 10px 10px 0 0;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+
+/********************
+ * Pages
+ ********************/
+.filterable {
+  position: relative;
+}
+
+.wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  position: relative;
+  margin-top: 87px;
+}
+
+.wrapper.recipe-open {
+  overflow-x: hidden;
+}
+
+#main:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+/********************
+ * Filters
+ ********************/
+.filter-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 98%;
+  margin: 0 1%;
+  z-index: 100;
+}
+
+.filter-bar {
+  background-color: rgb(66, 68, 72);
+  height: 54px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.filter-add {
+  color: #ffffff;
+  font-size: 58px;
+  background-color: rgba(253, 187, 44, 0.8);
+  line-height: 46px;
+  padding: 0px 8px;
+  cursor: pointer;
+  vertical-align: top;
+}
+
+.filter-add:hover {
+  background-color: rgba(253, 187, 44, 1);
+}
+
+.hidden .filter-bar {
+  height: 0;
+}
+
+.hidden .filter-collection, .hidden.filter-collection {
+  display: none;
+}
+
+.filter-collection {
+  background-color: rgba(33, 37, 44, 0.9);
+  margin: 0px 5px 0px 5px;
+  padding: 20px;
+}
+
+.filter-row {
+  margin-bottom: 10px;
+}
+
+.filter-row h4 {
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+#location-filter, #veggie-filter {
+  cursor: pointer;
+}
+
+#location-filter {
+  margin: 0 5px;
+}
+
+#veggie-filter {
+  margin: 0 7px 0px 4px;
+}
+
+/********************
+ * Badges
+ ********************/
+.badge {
+  -webkit-animation:badge-pulse 0.5s 0.4s 2;
+  -o-animation:badge-pulse 0.5s 0.4s 2;
+  animation:badge-pulse 0.5s 0.4s 2;
+
+  border: 5px solid #FFE000;
+  border-radius: 3rem;
+
+  transition: opacity 0.4s;
+
+  position: absolute;
+
+  width: 40px;
+  height: 40px;
+}
+
+#badge1 {
+  top: 157px;
+  left: 143px;
+}
+
+#badge2 {
+  top: 157px;
+  left: 294px;
+}
+
+@keyframes badge-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.2; transform: scale(2);}
+}
+
+@-webkit-keyframes badge-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.2; transform: scale(2); }
+}
+
+.quickpeek-wrapper {
+  display: none;
+  position: absolute;
+  border: 2px solid #FFE000;
+  z-index: 100;
+  background-color: #ffffff;
+  padding: 10px;
+}
+
+.quickpeek-image, .quickpeek-info{
+  float: left;
+}
+
+.quickpeek-wrapper:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+/********************
+ * Items
+ ********************/
+
+img[data-swap-group] {
+  display: none;
+  position: absolute;
+  cursor: pointer;
+  z-index: 1;
+
+  animation-duration: 1.5s;
+  -webkit-animation-duration: 1.5s;
+  -moz-animation-duration: 1.5s;
+  -ms-animation-duration: 1.5s;
+  -o-animation-duration: 1.5s;
+
+  animation-timing-function: ease;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-timing-function: ease;
+  -ms-animation-timing-function: ease;
+  -o-animation-timing-function: ease;
+}
+
+img[data-swap-group].displayed_item {
+  display: inline;
+}
+
+.slideInUp {
+  animation-name: slideInUp;
+  -webkit-animation-name: slideInUp;
+}
+
+@keyframes slideInUp {
+  0% {
+    transform: translateY(10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slideInUp {
+  0% {
+    -webkit-transform: translateY(10%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.slideOutDown {
+  animation-name: slideOutDown;
+  -webkit-animation-name: slideOutDown;
+}
+
+@keyframes slideOutDown {
+  0% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(10%);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes slideOutDown {
+  0% {
+    -webkit-transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(10%);
+    opacity: 0;
+  }
+}
+
+/********************
+ * Recipes
+ ********************/
+.recipe-focus {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.recipe-card {
+  visibility: hidden;
+  top: 188px;
+  position: absolute;
+  z-index: 1;
+}
+
+.animating-rotation.recipe-card {
+  visibility: visible;
+}
+
+.present.recipe-card {
+  visibility: visible;
+  z-index: 5;
+}
+
+.slideRecipeLeft {
+  animation-name: slideRecipeLeft;
+  -webkit-animation-name: slideRecipeLeft;
+
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  -o-animation-duration: 1s;
+
+  animation-timing-function: ease;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-timing-function: ease;
+  -ms-animation-timing-function: ease;
+  -o-animation-timing-function: ease;
+
+  visibility: visible;
+}
+
+@keyframes slideRecipeLeft {
+  0% {
+    transform: translateX(20%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@-webkit-keyframes slideRecipeLeft {
+  0% {
+    -webkit-transform: translateX(20%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+  }
+}
+
+.slideRecipeRight {
+  animation-name: slideRecipeRight;
+  -webkit-animation-name: slideRecipeRight;
+
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  -o-animation-duration: 1s;
+
+  animation-timing-function: ease;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-timing-function: ease;
+  -ms-animation-timing-function: ease;
+  -o-animation-timing-function: ease;
+
+  visibility: visible;
+}
+
+@keyframes slideRecipeRight {
+  0% {
+    transform: translateX(-20%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@-webkit-keyframes slideRecipeRight {
+  0% {
+    -webkit-transform: translateX(-20%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+  }
+}
+
+.centerToRight {
+/*  -webkit-transform: scale(1) !important;
+  -ms-transform: scale(1) !important;
+  transform: scale(1) !important;*/
+  left: 270px !important;
+  z-index: 1 !important;
+}
+
+.leftToCenter {
+/*  -webkit-transform: scale(1.1) !important;
+  -ms-transform: scale(1.1) !important;
+  transform: scale(1.1) !important;*/
+  left: 220px !important;
+  z-index: 5 !important;
+}
+
+.rightToLeft {
+  left: 170px !important;
+  z-index: 1 !important;
+}
+/********************
+ * Page Transitions
+ ********************/
+
+.slidePageIn {
+  animation-name: slidePageUp;
+  -webkit-animation-name: slidePageUp;
+
+  animation-duration: 2s;
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  -ms-animation-duration: 2s;
+  -o-animation-duration: 2s;
+
+  animation-timing-function: ease;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-timing-function: ease;
+  -ms-animation-timing-function: ease;
+  -o-animation-timing-function: ease;
+}
+
+@keyframes slidePageUp {
+  0% {
+    transform: translateY(150%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slidePageUp {
+  0% {
+    -webkit-transform: translateY(150%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+/********************
+ * Slideout CSS
+ ********************/
+
+.slideout-overlay {
+  width: 100%;
+  top: 0px;
+  bottom: 0px;
+  position: absolute;
+  z-index: 500;
+
+  left: 0px;
+  width: 100%;
+  transition: all 0.3s;
+
+  overflow: hidden;
+}
+
+.slideout-overlay[collapsed] {
+  left: 100%;
+  width: 0;
+}
+
+.slideout-background {
+  background: rgba(22, 22, 22, 0.8);
+  height: 100%;
+}
+
+.slideout-content {
+  width: 400px;
+  background-color: white;
+  height: 100%;
+  float: right;
+}
+
+.slideout-image {
+  height: 380px;
+}
+
+.slideout-image img {
+  max-height: 380px;
+}
+
+.slideout-description {
+  background-color: rgb(19, 135, 111);
+  height: 100%;
+  color: white;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.slideout-description p {
+  margin: 10px 0;
+}

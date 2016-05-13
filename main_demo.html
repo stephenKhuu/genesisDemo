@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <!-- Page Description -->
+    <title>Flipp - Genesis Demo</title>
+
+    <!-- Stylesheets -->
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <link href="stylesheets/styles_to_merge.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+  </head>
+  <body>
+
+    <div id="nav">
+      <img id="topnav" src="images/topnav.png">
+      <div class="filter-toggle">
+        show/hide filters
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <div id="main">
+        <div id="page1" class="filterable">
+          <div class="badge" id="badge1"></div>
+          <div class="badge" id="badge2"></div>
+        </div>
+        <div id="page2" class="filterable">
+          <img id="kale" src="images/kale.png" data-swap-group="swap_2">
+          <img id="pork" src="images/pork.png" data-swap-group="swap_2">
+          <div id="itempopclickbox">
+          </div>
+          <div id="itempop">
+            <img class="itempop-img slideRight2" src="images/itempop-img.png">
+            <img class="itemname slideUp" src="images/itempop-1.png">
+            <img class="itemcta slideUp1" src="images/itempop-2.png">
+            <img class="itemdeets slideUp" src="images/itempop-3.png">
+          </div>
+        </div>
+        <div id="page3" class="slidePageIn">
+        </div>
+        <div id="page4" class="filterable">
+        </div>
+        <div id="page5" class="filterable">
+          <div id="recipe-bg">
+            <img id="recipe1" src="images/recipe-1.png" class="recipe-card">
+            <img id="recipe2" src="images/recipe-2.png" class="recipe-card">
+            <img id="recipe3" src="images/recipe-3.png" class="recipe-card">
+          </div>
+        </div>
+        <div id="page6" class="filterable">
+        </div>
+        <div id="page7" class="filterable">
+        </div>
+
+      </div>
+      <div class="slideout-overlay" collapsed>
+        <div class="slideout-background">
+          <div class="slideout-content">
+            <div class="slideout-image">
+            </div>
+            <div class="slideout-description">
+              <p>
+              Check out this new recipe!
+              </p>
+              <p>
+              Filet mignon meatball tail fatback, kielbasa pig ribeye.
+              Boudin leberkas cupim picanha, brisket tongue swine.
+              Capicola ham beef ribs ground round short loin ribeye.
+              </p>
+              <p>
+              Sirloin pork chop ribeye capicola bacon.
+              Picanha kielbasa drumstick alcatra, capicola filet mignon fatback tail strip steak flank beef ribs doner venison boudin.
+              </p>
+              <p>
+              Pork chop corned beef flank, tail ham spare ribs pig.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="scripts/recipeCarousel.js"></script>
+    <script type="text/javascript" src="scripts/flyerBadge.js"></script>
+    <script type="text/javascript" src="scripts/filterControl.js"></script>
+    <script type="text/javascript" src="scripts/controlManager.js"></script>
+    <script type="text/javascript" src="scripts/genesis_config.js"></script>
+    <script type="text/javascript" src="scripts/genesis.js"></script>
+    <script>
+      $(function() {
+        var currentFilter;
+
+        var recipeCarousel = new window.RecipeCarousel();
+        var flyerBadge = new window.FlyerBadge();
+        var genesisApp = new window.Genesis(window.Genesis_Config);
+        var controlManager = new window.ControlManager();
+
+        recipeCarousel.init();
+        flyerBadge.init();
+        genesisApp.init();
+        controlManager.init(genesisApp);
+
+        $('.filter-toggle').click(function(){
+          event.stopPropagation();
+
+          controlManager.toggle();
+        });
+      });
+    </script>
+
+    <noscript id="page-filter">
+      <div class="filter-wrapper hidden">
+        <div class="filter-bar">
+          <span class="filter-add">+</span>
+          <span class="filter-selected"></span>
+        </div>
+
+        <div class="filter-collection hidden">
+          <div class="filter-row">
+            <h4>Geography</h4>
+            <div class="filter-items">
+              <img src="images/world.png" />
+              <img src="images/location.png" id="location-filter" data-filter="LOCATION"/>
+              <img src="images/weather.png" />
+            </div>
+          </div>
+          <div class="filter-row">
+            <h4>Interest</h4>
+            <div class="filter-items">
+              <img src="images/purpleleft.png" />
+              <img src="images/veggie.png" id="veggie-filter" data-filter="VEGETARIAN"/>
+              <img src="images/purpleright.png" />
+            </div>
+          </div>
+          <div class="filter-row">
+            <h4>Transaction Log</h4>
+            <div class="filter-items">
+              <img src="images/bluebar.png" />
+            </div>
+          </div>
+          <div class="filter-row">
+            <h4>Retargetting</h4>
+            <div class="filter-items">
+              <img src="images/redbar.png" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </noscript>
+
+    <noscript id="quickPeek-template">
+      <div class="quickpeek-wrapper">
+        <div class="quickpeek-image">
+          <img src="https://s-media-cache-ak0.pinimg.com/236x/3c/7e/dd/3c7edd14e3f6ca809d7033ec1c6e4eea.jpg" />
+        </div>
+        <div class="quickpeek-info">
+          <div class="quickpeek-price">
+            9.99
+          </div>
+          <div class="quickpeek-name">
+            Delicious Food
+          </div>
+          <div class="quickpeek-decscription">
+            You're missing out by not buying this.
+          </div>
+        </div>
+      </div>
+    </noscript>
+
+  </body>
+</html>

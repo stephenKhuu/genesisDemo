@@ -1,0 +1,351 @@
+.slideUp1 {
+	animation-name: slideUp;
+	-webkit-animation-name: slideUp;	
+
+	animation-duration: 2s;	
+	-webkit-animation-duration: 2s;
+	-moz-animation-duration: 2s;
+	-ms-animation-duration: 2s;
+	-o-animation-duration: 2s;
+
+	animation-timing-function: ease;	
+	-webkit-animation-timing-function: ease;
+	-moz-animation-timing-function: ease;
+	-ms-animation-timing-function: ease;
+	-o-animation-timing-function: ease;
+	
+
+	visibility: visible !important;			
+}
+
+@keyframes slideUp {
+	0% {
+		transform: translateY(150%);
+		opacity: 0;
+	}
+	40% {
+		transform: translateY(150%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0%);
+		opacity: 1;
+	}	
+}
+
+@-webkit-keyframes slideUp {
+	0% {
+		-webkit-transform: translateY(150%);
+		opacity: 0;
+	}
+	40% {
+		-webkit-transform: translateY(150%);
+		opacity: 0;
+	}
+	100% {
+		-webkit-transform: translateY(0%);
+		opacity: 1;
+	}	
+}
+
+.slideUppp {
+	animation-name: slideUppp;
+	-webkit-animation-name: slideUppp;	
+
+	animation-duration: 1.5s;	
+	-webkit-animation-duration: 1.5s;
+	-moz-animation-duration: 1.5s;
+	-ms-animation-duration: 1.5s;
+	-o-animation-duration: 1.5s;
+
+	animation-timing-function: ease;	
+	-webkit-animation-timing-function: ease;
+	-moz-animation-timing-function: ease;
+	-ms-animation-timing-function: ease;
+	-o-animation-timing-function: ease;
+	
+
+	display: inline !important;			
+}
+
+@keyframes slideUppp {
+	0% {
+		transform: translateY(10%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0%);
+		opacity: 1;
+	}	
+}
+
+@-webkit-keyframes slideUppp {
+	0% {
+		-webkit-transform: translateY(10%);
+		opacity: 0;
+	}
+	100% {
+		-webkit-transform: translateY(0%);
+		opacity: 1;
+	}	
+}
+
+
+
+
+
+
+
+
+
+
+/*
+==============================================
+slideUp
+==============================================
+*/
+
+
+.slideUp {
+	animation-name: slideUp;
+	-webkit-animation-name: slideUp;	
+
+	animation-duration: 2s;	
+	-webkit-animation-duration: 2s;
+	-moz-animation-duration: 2s;
+	-ms-animation-duration: 2s;
+	-o-animation-duration: 2s;
+
+	animation-timing-function: ease;	
+	-webkit-animation-timing-function: ease;
+	-moz-animation-timing-function: ease;
+	-ms-animation-timing-function: ease;
+	-o-animation-timing-function: ease;
+
+	visibility: visible !important;			
+}
+
+@keyframes slideUp {
+	0% {
+		transform: translateY(150%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0%);
+		opacity: 1;
+	}	
+}
+
+@-webkit-keyframes slideUp {
+	0% {
+		-webkit-transform: translateY(150%);
+		opacity: 0;
+	}	
+	100% {
+		-webkit-transform: translateY(0%);
+		opacity: 1;
+	}	
+}
+
+/*
+==============================================
+slideUp End
+==============================================
+*/
+
+
+
+
+
+/*
+==============================================
+slideLeft
+==============================================
+*/
+
+
+.slideLeft {
+	animation-name: slideLeft;
+	-webkit-animation-name: slideLeft;	
+
+	animation-duration: 1s;	
+	-webkit-animation-duration: 1s;
+	-moz-animation-duration: 1s;
+	-ms-animation-duration: 1s;
+	-o-animation-duration: 1s;
+
+	animation-timing-function: ease;	
+	-webkit-animation-timing-function: ease;
+	-moz-animation-timing-function: ease;
+	-ms-animation-timing-function: ease;
+	-o-animation-timing-function: ease;
+
+	visibility: visible !important;			
+}
+
+@keyframes slideLeft {
+	0% {
+		transform: translateX(20%);
+	}
+	100% {
+		transform: translateX(0%);
+	}	
+}
+
+@-webkit-keyframes slideLeft {
+	0% {
+		-webkit-transform: translateX(20%);
+	}	
+	100% {
+		-webkit-transform: translateX(0%);
+	}	
+}
+
+/*
+==============================================
+slideLeft End
+==============================================
+*/
+
+
+
+
+
+/*
+==============================================
+slideRight
+==============================================
+*/
+
+
+.slideRight {
+	animation-name: slideRight;
+	-webkit-animation-name: slideRight;	
+
+	animation-duration: 1s;	
+	-webkit-animation-duration: 1s;
+	-moz-animation-duration: 1s;
+	-ms-animation-duration: 1s;
+	-o-animation-duration: 1s;
+
+	animation-timing-function: ease;	
+	-webkit-animation-timing-function: ease;
+	-moz-animation-timing-function: ease;
+	-ms-animation-timing-function: ease;
+	-o-animation-timing-function: ease;
+
+	visibility: visible !important;			
+}
+
+@keyframes slideRight {
+	0% {
+		transform: translateX(-20%);
+	}
+	100% {
+		transform: translateX(0%);
+	}	
+}
+
+@-webkit-keyframes slideRight {
+	0% {
+		-webkit-transform: translateX(-20%);
+	}	
+	100% {
+		-webkit-transform: translateX(0%);
+	}	
+}
+
+
+.slideRight2 {
+	animation-name: slideRightt;
+	-webkit-animation-name: slideRightt;	
+
+	animation-duration: 2s;	
+	-webkit-animation-duration: 2s;
+	-moz-animation-duration: 2s;
+	-ms-animation-duration: 2s;
+	-o-animation-duration: 2s;
+
+	animation-timing-function: ease;	
+	-webkit-animation-timing-function: ease;
+	-moz-animation-timing-function: ease;
+	-ms-animation-timing-function: ease;
+	-o-animation-timing-function: ease;
+
+	visibility: visible !important;			
+}
+
+@keyframes slideRightt {
+	0% {
+		transform: translateX(-120%);
+	}
+	100% {
+		transform: translateX(0%);
+	}	
+}
+
+@-webkit-keyframes slideRightt {
+	0% {
+		-webkit-transform: translateX(-120%);
+	}	
+	100% {
+		-webkit-transform: translateX(0%);
+	}	
+}
+
+/*
+==============================================
+slideRight End
+==============================================
+*/
+
+
+
+
+
+/*
+==============================================
+slideDown
+==============================================
+*/
+
+
+.slideDown {
+	animation-name: slideDown;
+	-webkit-animation-name: slideDown;	
+
+	animation-duration: 1.5s;	
+	-webkit-animation-duration: 1.5s;
+	-moz-animation-duration: 1.5s;
+	-ms-animation-duration: 1.5s;
+	-o-animation-duration: 1.5s;
+
+	animation-timing-function: ease;	
+	-webkit-animation-timing-function: ease;
+	-moz-animation-timing-function: ease;
+	-ms-animation-timing-function: ease;
+	-o-animation-timing-function: ease;
+		
+}
+
+@keyframes slideDown {
+	0% {
+		transform: translateY(0%);
+		opacity: 1;
+	}
+	100% {
+		transform: translateY(10%);
+		opacity: 0;
+	}	
+}
+
+@-webkit-keyframes slideDown {
+	0% {
+		-webkit-transform: translateY(0%);
+		opacity: 1;
+	}	
+	100% {
+		-webkit-transform: translateY(10%);
+		opacity: 0;
+	}	
+}
