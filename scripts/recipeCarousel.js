@@ -46,27 +46,31 @@
       }
 
       $('.recipe-card').click(function(){
-        var self = $(this);
-        var selectedId = self.attr('id');
-
-        if(selectedId == presentRecipe.attr('id')) {
-          //Display recipe slideout
-        } else {
-          if(selectedId == $leftSibling_.attr('id')) {
-            rotateCardsCounterClockwise();
-          } else if(selectedId == $rightSibling_.attr('id')) {
-            rotateCardsClockwise();
-          }
-
-          setPresentRecipe(self);
-        }
+        bindCardRotation($(this));
       });
+
 
       $recipeSlideout_.find('.slideout-background').click(function(){
         $recipeSlideout_.attr('collapsed', 'true');
         $wrapper_.removeClass('recipe-open');
       });
     };
+
+    function bindCardRotation($target) {
+      var selectedId = $target.attr('id');
+
+      if(selectedId == presentRecipe.attr('id')) {
+        //Display recipe slideout
+      } else {
+        if(selectedId == $leftSibling_.attr('id')) {
+          rotateCardsCounterClockwise();
+        } else if(selectedId == $rightSibling_.attr('id')) {
+          rotateCardsClockwise();
+        }
+
+        setPresentRecipe($target);
+      }
+    }
 
     function rotateCardsCounterClockwise(){
       rotateCards($rightSibling_, $leftSibling_, presentRecipe);
@@ -77,6 +81,10 @@
     }
 
     function rotateCards($cardForLeft, $cardForCenter, $cardForRight) {
+      $('.recipe-focus').remove('recipe-focus');
+      $('.slideRecipeLeft').removeClass('slideRecipeLeft');
+      $('.slideRecipeRight').removeClass('slideRecipeRight');
+
       $cardForLeft.css({
         'left' : recipeCoordinates['left'] + 'px'
       });
@@ -103,8 +111,10 @@
     function setPresentRecipe($newRecipe) {
       if(presentRecipe) {
         presentRecipe.unbind('click');
+        $leftSibling_.unbind('click');
+        $rightSibling_.unbind('click');
         presentRecipe.unbind('mouseenter');
-        presentRecipe.unbind('mouseleave');
+        $recipeContainer_.unbind('mouseleave');
         presentRecipe.removeClass('present');
       }
 
@@ -131,11 +141,17 @@
         $wrapper_.addClass('recipe-open');
       });
 
-      $recipeContainer_.hover(function(ev){
+      $('.recipe-card').click(function(){
+        bindCardRotation($(this));
+      });
+
+      presentRecipe.on('mouseenter', function(ev){
         presentRecipe.add('recipe-focus');
         $leftSibling_.addClass('slideRecipeLeft');
         $rightSibling_.addClass('slideRecipeRight');
-      }, function(ev) {
+      });
+
+      $recipeContainer_.on('mouseleave', function(ev) {
         presentRecipe.remove('recipe-focus');
         $leftSibling_.removeClass('slideRecipeLeft');
         $rightSibling_.removeClass('slideRecipeRight');

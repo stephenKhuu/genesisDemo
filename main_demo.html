@@ -24,6 +24,12 @@
     <div class="wrapper">
       <div id="main">
         <div id="page1" class="filterable">
+          <div id="location-dc" class="dc hidden">
+            <img src="images/location_dc.png"/>
+            <div class="location-marker">
+              <img src="images/location_icon.png"/>
+            </div>
+          </div>
           <div class="badge" id="badge1"></div>
           <div class="badge" id="badge2"></div>
         </div>
@@ -33,10 +39,10 @@
           <div id="itempopclickbox">
           </div>
           <div id="itempop">
-            <img class="itempop-img slideRight2" src="images/itempop-img.png">
-            <img class="itemname slideUp" src="images/itempop-1.png">
-            <img class="itemcta slideUp1" src="images/itempop-2.png">
-            <img class="itemdeets slideUp" src="images/itempop-3.png">
+            <img class="itempop-img itemPopSlideRight" src="images/itempop-img.png">
+            <img class="itemname itemPopSlideUp" src="images/itempop-1.png">
+            <img class="itemcta itemPopSlideUpAlternate" src="images/itempop-2.png">
+            <img class="itemdeets itemPopSlideUp" src="images/itempop-3.png">
           </div>
         </div>
         <div id="page3" class="slidePageIn">
@@ -107,6 +113,14 @@
           event.stopPropagation();
 
           controlManager.toggle();
+        });
+
+        $("#itempopclickbox").click(function() {
+          $("#itempop").fadeIn();
+        });
+
+        $("#itempop").click(function() {
+          $("#itempop").hide();
         });
       });
     </script>

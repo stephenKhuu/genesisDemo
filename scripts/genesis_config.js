@@ -1,6 +1,14 @@
 (function() {
 
   genesis_config = {
+    DCs : {
+      page1: {
+        LOCATION : [{
+          id : 'location-dc',
+          direction: 'Up'
+        }]
+      }
+    },
     item_swaps: {
       swap_2: {
         DEFAULT: {

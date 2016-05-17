@@ -19,26 +19,16 @@
       'Right' : 'Left'
     };
 
-    var currentFilter = FILTERS.DEFAULT;
+    var currentFilter = {};
 
     var itemSwapStore = swapConfig.item_swaps;
+    var availableDCs = swapConfig.DCs;
 
     this.filters = FILTERS;
 
     this.init = function() {
+      configurePages();
       configureItems();
-    };
-
-    this.updateFilter = function(newFilter, pageIndex) {
-      if (!animationLock){
-        hideItems(pageIndex);
-        currentFilter = newFilter;
-        renderItems(pageIndex);
-
-        return true;
-      }
-
-      return false;
     };
 
     function configureItems(){
@@ -61,12 +51,43 @@
       }
     }
 
+    function configurePages() {
+      $('.filterable').each(function(index, value){
+        var pageNum = index + 1;
+
+        currentFilter['page' + pageNum] = FILTERS.DEFAULT;
+      });
+    }
+
+    this.updateFilter = function(newFilter, pageIndex) {
+      if (!animationLock){
+        hideItems(pageIndex);
+        currentFilter['page' + pageIndex] = newFilter;
+        renderItems(pageIndex);
+
+        return true;
+      }
+
+      return false;
+    };
+
+    this.updateAvailableDCs = function(newFilter, pageIndex) {
+      if (!animationLock) {
+        hideAvailableDCs(pageIndex);
+        currentFilter['page' + pageIndex] = newFilter;
+        showAvailableDCs(pageIndex);
+        return true;
+      }
+
+      return false;
+    };
+
     function renderItems(pageIndex) {
       var swapId = 'swap_' + pageIndex;
       var swapGroup = itemSwapStore[swapId];
 
-      if(swapGroup) {
-        var itemVersion = swapGroup[currentFilter];
+      if(swapGroup && swapGroup[currentFilter['page' + pageIndex]]) {
+        var itemVersion = swapGroup[currentFilter['page' + pageIndex]];
         var $item = $('#' + itemVersion['id'] + '[data-swap-group="' + swapId + '"]');
 
         $item.addClass('displayed_item');
@@ -79,8 +100,8 @@
       var swapId = 'swap_' + pageIndex;
       var swapGroup = itemSwapStore[swapId];
 
-      if(swapGroup) {
-        var itemVersion = swapGroup[currentFilter];
+      if(swapGroup && swapGroup[currentFilter['page' + pageIndex]]) {
+        var itemVersion = swapGroup[currentFilter['page' + pageIndex]];
         var $item = $('#' + itemVersion['id'] + '[data-swap-group="' + swapId + '"]');
 
         animationLock = true;
@@ -92,6 +113,30 @@
 
         $item.removeClass('slideIn' + itemVersion['direction']);
         $item.addClass('slideOut' + DIRECTION_OPPOSITES[itemVersion['direction']]);
+      }
+    }
+
+    function hideAvailableDCs(pageIndex) {
+      var pageId = 'page' + pageIndex;
+      var DCs = $('#' + pageId).find('.dc');
+
+      DCs.addClass('hidden');
+      DCs.removeClass('slideInDown');
+    }
+
+    function showAvailableDCs(pageIndex) {
+      var pageId = 'page' + pageIndex;
+      var DCgroup = availableDCs[pageId];
+
+      if(DCgroup && DCgroup[currentFilter['page' + pageIndex]]) {
+        var dcList = DCgroup[currentFilter['page' + pageIndex]];
+
+        [].forEach.call(dcList, function(dc){
+          var $dc = $('#' + dc.id);
+
+          $dc.removeClass('hidden');
+          $dc.addClass('slideInDown');
+        });
       }
     }
 

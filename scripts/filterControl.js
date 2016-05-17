@@ -13,6 +13,7 @@
     var $filterCollection_;
 
     var $veggieFilter_;
+    var $locationFilter_;
 
     var controlTemplate = $('#page-filter').text();
 
@@ -27,6 +28,7 @@
       $filterSelected_ = $page_.find('.filter-selected');
 
       $veggieFilter_ = $filterCollection_.find('#veggie-filter');
+      $locationFilter_ = $filterCollection_.find('#location-filter');
 
       bindEvents();
     };
@@ -38,6 +40,10 @@
 
       $veggieFilter_.click(function(){
         toggleVeggieFilter();
+      });
+
+      $locationFilter_.click(function() {
+        toggleLocationFilter();
       });
     }
 
@@ -56,6 +62,26 @@
 
           $filterCopy.click(function(){
             toggleVeggieFilter();
+          });
+        }
+      }
+    }
+
+    function toggleLocationFilter() {
+      var $currentFilter = $filterSelected_.find('img');
+
+      if ($currentFilter.length > 0) {
+        if(genesisApp.updateAvailableDCs(genesisApp.filters.DEFAULT, pageId)) {
+          $filterSelected_.html('');
+        }
+      } else {
+        if(genesisApp.updateAvailableDCs(genesisApp.filters.LOCATION, pageId)) {
+          var $filterCopy = $locationFilter_.clone();
+
+          $filterCopy.appendTo($filterSelected_);
+
+          $filterCopy.click(function(){
+            toggleLocationFilter();
           });
         }
       }
